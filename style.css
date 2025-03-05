@@ -1,0 +1,954 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #0a192f;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Navbar Styles */
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 500;
+    padding: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Active Link Styling */
+.nav-link.active {
+    color: #00ff99;
+    border-bottom: 2px solid #00ff99;
+}
+
+
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .navbar.open ul {
+        display: flex;
+    }
+    .nav-link {
+      font-size: 10px;
+      padding: 10px;
+    }
+    .social-media {
+     padding: 20px;
+    }
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.irish-green {
+    color: #008f66; /* Irish Green */
+    transition: color 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+    text-align: left;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeInOut 12s infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-buttons {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Social Media Icons */
+.social-media {
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    padding: 6px 8px;
+    border-radius: 16px;
+    transition: all 0.5s;
+}
+
+/* Profile Image */
+.profile-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid #00ff99;
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Smooth Fade-In and Out Transition */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    25% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    75% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Pulse Animation for Profile Image */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .profile-image {
+        margin-top: 20px;
+    }
+    .btn {
+      display: flex;
+      margin-top: 20px;
+      padding: 20px;
+    }
+    .logo h1 {
+      display: none;
+      font-size: 20px;
+    }
+    .hero-content h1 {
+      margin-left: 6px;
+    }
+    .hero-content p {
+      margin-left: 6px;
+    }
+    .social-media {
+      margin-left: 20px;
+    }
+}
+
+/* Header Section */
+
+.services-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    margin-top: 40px;
+}
+
+.services-header h1 {
+    font-size: 2.5rem;
+    
+}
+
+.services-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    
+}
+
+/* Services Section */
+.services-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Service Card */
+.service-card {
+    background: #112240;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Service Image */
+.service-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Overlay */
+.service-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-image:hover .overlay {
+    opacity: 0.2;
+}
+
+/* Service Content */
+.service-content {
+    padding: 20px;
+}
+
+.service-content h2 {
+    font-size: 1.5rem;
+    color: #00ff99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service-content p {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+/* Hire Me Button */
+.hire-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.hire-btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header Section */
+.shop-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #112240);
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px solid #008f66;
+}
+
+.shop-header h1 {
+    font-size: 2.5rem;
+}
+
+.sho p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Shop Section */
+.shop-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Product Card */
+.product-card {
+    background: #112240;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Product Image */
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Overlay */
+.product-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-image:hover .overlay {
+    opacity: 0.2;
+}
+
+/* Product Content */
+.product-content {
+    padding: 20px;
+}
+
+.product-content h2 {
+    font-size: 1.5rem;
+    color: #00ff99;
+    margin-bottom: 10px;
+}
+
+.product-content p {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Discount Tag */
+.discount-tag {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #ff6600;
+    color: white;
+    padding: 5px 15px;
+    font-size: 1rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .shop-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header Section */
+.download-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    color: white;
+    text-align: center;
+}
+
+.download-header h1 {
+    font-size: 2.5rem;
+}
+
+.download-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Download Section */
+.download-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Download Card */
+.download-card {
+    background: #112240;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.download-card:hover {
+    transform: scale(1.05);
+}
+
+/* Download Image */
+.download-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.download-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Overlay */
+.download-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.download-image:hover .overlay {
+    opacity: 0.2;
+}
+
+/* Download Content */
+.download-content {
+    padding: 20px;
+}
+
+.download-content h2 {
+    font-size: 1.5rem;
+    color: #00ff99;
+    margin-bottom: 10px;
+}
+
+.download-content p {
+    font-size: 1rem;
+    margin: 15px 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .download-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Header Section */
+.testimonial-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    color: white;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+
+}
+
+.testimonial-header h1 {
+    font-size: 2.5rem;
+}
+
+.testimonial-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px;
+    justify-content: center;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: #112240;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonial Image */
+.testimonial-image {
+    width: 100px;
+    height: 100px;
+    margin: 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.testimonial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Testimonial Content */
+.testimonial-content {
+    padding: 20px;
+}
+
+.testimonial-content h2 {
+    font-size: 1.2rem;
+    color: #00ff99;
+    margin-bottom: 10px;
+}
+
+.testimonial-content p {
+    font-size: 1rem;
+    color: #ddd;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonials-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    color: white;
+    text-align: center;
+}
+
+.about-header h1 {
+    font-size: 2.5rem;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Profile Image Styling */
+.about-image {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 143, 102, 0.5);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Gradient Overlay */
+.about-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.about-image:hover .overlay {
+    opacity: 0.2;
+}
+
+/* About Content */
+.about-content {
+    max-width: 500px;
+    text-align: left;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #00ff99;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Contact Button */
+.contact-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-content {
+        text-align: center;
+    }
+}
+
+/* Header Section */
+.contact-header {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #0a192f, #008f66);
+    color: white;
+    text-align: center;
+}
+
+.contact-header h1 {
+    font-size: 2.5rem;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Contact Info */
+.contact-info {
+    background: #112240;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+}
+
+.contact-info h2 {
+    color: #00ff99;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #00ff99;
+    margin-right: 15px;
+}
+
+.info-item p {
+    font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-form {
+    background: #112240;
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 143, 102, 0.3);
+}
+
+.contact-form h2 {
+    color: #00ff99;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Form Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #0a192f;
+    border: 2px solid #00ff99;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Floating Label Effect */
+.input-group input:focus ~ label,
+.input-group textarea:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+    top: 10px;
+    font-size: 0.9rem;
+    color: #00ff99;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #00ff99, #008f66);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #008f66, #00ff99);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-info, .contact-form {
+        width: 90%;
+    }
+}
+
