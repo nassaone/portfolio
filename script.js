@@ -64,3 +64,29 @@ function changeDescription() {
 }
 
 setInterval(changeDescription, 3500); // Change text every 3.5 seconds (to sync with animation)
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    // Toggle menu on click
+    menuToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+
+            // Hide menu after clicking a link
+            navbar.classList.remove("active");
+        });
+    });
+});

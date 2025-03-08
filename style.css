@@ -52,8 +52,6 @@ body {
     border-bottom: 2px solid #00ff99;
 }
 
-
-
 .section.show {
     opacity: 1;
     transform: translateY(0);
@@ -64,39 +62,81 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Mobile Menu */
+
+/* Menu Toggle (Only for Mobile) */
 .menu-toggle {
-    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: none;  /* Hide by default */
 }
 
+/* Navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+/* Desktop Menu */
 .navbar ul {
+    list-style: none;
     display: flex;
 }
 
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #c0ffb3;
+}
+
+/* Mobile Menu */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
+        display: block;  /* Show toggle button on mobile */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 250px;
+        height: auto;
+        background: linear-gradient(45deg, #00a86b, #00853e);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    /* When active, show menu */
+    .navbar.active {
+        transform: translateX(0);
     }
 
     .navbar ul {
-        display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column;
+        padding: 0;
     }
 
-    .navbar.open ul {
-        display: flex;
-    }
-    .nav-link {
-      font-size: 10px;
-      padding: 10px;
-    }
-    .social-media {
-     padding: 20px;
+    .navbar ul li {
+        margin: 15px 0;
     }
 }
 
 .logo h1 {
-    font-size: 2.5rem;
+    font-size: 24px;
     color: white;
     font-weight: bold;
     text-transform: uppercase;
@@ -205,6 +245,21 @@ html {
     border-radius: 50%;
 }
 
+.profile-image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.about-image:hover .overlay {
+    opacity: 0.2;
+}
+
 /* Smooth Fade-In and Out Transition */
 @keyframes fadeInOut {
     0% {
@@ -250,10 +305,6 @@ html {
       display: flex;
       margin-top: 20px;
       padding: 20px;
-    }
-    .logo h1 {
-      display: none;
-      font-size: 20px;
     }
     .hero-content h1 {
       margin-left: 6px;
@@ -740,22 +791,6 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Gradient Overlay */
-.about-image .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(10, 25, 47, 0.3), rgba(0, 143, 102, 0.8));
-    opacity: 0.6;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.about-image:hover .overlay {
-    opacity: 0.2;
 }
 
 /* About Content */
